@@ -85,6 +85,16 @@ body {
   padding: 5px 0;
 }
 
+.close-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 30px;
+  min-height: 30px;
+  background-color: rgb(247, 238, 238);
+  border-radius: 10px;
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
