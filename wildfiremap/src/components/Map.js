@@ -20,19 +20,39 @@ const Map = ({ eventData, center, zoom }) => {
 
     const markers = eventData.map((ev, index) => {
         if(ev.categories[0].id === NATURAL_EVENT_WILDFIRE) {
-            return <LocationMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} onClick={() => setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date})} />
+            return <LocationMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} 
+            onClick={() => {
+                setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date});
+                setShowBox(true);
+                }
+            }/>
         }
 
         if(ev.categories[0].id === NATURAL_EVENT_VOLCANO ) {
-            return <VolcanoMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} onClick={() => setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date})} />
+            return <VolcanoMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]}
+            onClick={() => {
+                setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date})
+                setShowBox(true);
+                } 
+            }/>
         }
 
         if(ev.categories[0].id === NATURAL_EVENT_STORM ) {
-            return <StormMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} onClick={() => setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date})} />
+            return <StormMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} 
+            onClick={() => {
+                setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date})
+                setShowBox(true);
+                } 
+            }/>
         }
 
         if(ev.categories[0].id === NATURAL_EVENT_ICE ) {
-            return <IceMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} onClick={() => setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date})} />
+            return <IceMarker key={index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} 
+            onClick={() => {
+                setLocationInfo({ id: ev.id, title: ev.title, categories: ev.categories[0].title, geometries: ev.geometries[0].date})
+                setShowBox(true);
+                } 
+            }/>
         }
 
         return null
