@@ -10,7 +10,7 @@ const SearchBar = () => (
             placeholder="Type to Search..."
             name="s" 
         />
-        <button type="submit">Search</button>
+        {/* <button type="submit">Search</button> */}
     </form>
 );
 
