@@ -12,23 +12,24 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.wildfire.repository.*;
 import com.example.wildfire.entity.*;
 import com.example.wildfire.exception.ResourceNotFoundException;
 
 @RestController
-@RequestMapping("/api/wildfires")
 public class WildfireController {
 
 	@Autowired
 	private WildfireRepository wildfireRepository;
 	
+	@RequestMapping("/api/wildfires")
 	public List<Wildfire> getAllWildfires(){
 		return this.wildfireRepository.findAll();
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/api/wildfires/{id}")
 	public Wildfire getWildfireById(@PathVariable (value = "id") long wildfireId) {
 		return this.wildfireRepository.findById(wildfireId)
 				.orElseThrow(() -> new ResourceNotFoundException("Wildfire not found with id :" + wildfireId));
@@ -56,4 +57,13 @@ public class WildfireController {
 		this.wildfireRepository.delete(existingWildfire);
 		return ResponseEntity.ok().build();
 	}
+
+	@GetMapping("/getNASA")
+	public String getNASA() {
+		String url = "https://eonet.sci.gsfc.nasa.gov/api/v3/events";
+		RestTemplate restTemplate = new RestTemplate();
+		String result = restTemplate.getForObject(url, String.class);
+		return result;
+	}
 }
+
