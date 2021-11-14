@@ -3,6 +3,7 @@ package com.example.wildfire.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,7 +59,7 @@ public class WildfireController {
 		return ResponseEntity.ok().build();
 	}
 
-	@GetMapping("/getNASA")
+	@GetMapping(path = "/getNASA", produces = MediaType.APPLICATION_JSON_VALUE)
 	public String getNASA() {
 		String url = "https://eonet.sci.gsfc.nasa.gov/api/v3/events";
 		RestTemplate restTemplate = new RestTemplate();
