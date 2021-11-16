@@ -10,7 +10,9 @@ function App() {
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true)
-      const res = await fetch('https://eonet.sci.gsfc.nasa.gov/api/v2.1/events')
+      const res = await fetch('https://eonet.sci.gsfc.nasa.gov/api/v2.1/events') //process.env.WILDFIRE_ENV
+      // console.log(process.env.WILDFIRE_ENV)
+      // const res = await fetch(process.env.WILDFIRE_ENV)
       const { events } = await res.json()
 
       setEventData(events)
