@@ -18,7 +18,10 @@ import org.springframework.web.client.RestTemplate;
 import com.example.wildfire.repository.*;
 import com.example.wildfire.entity.*;
 import com.example.wildfire.exception.ResourceNotFoundException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+
+@CrossOrigin(origins="http://localhost:3000")
 @RestController
 public class WildfireController {
 
@@ -59,9 +62,10 @@ public class WildfireController {
 		return ResponseEntity.ok().build();
 	}
 
+	@CrossOrigin
 	@GetMapping(path = "/getNASA", produces = MediaType.APPLICATION_JSON_VALUE)
 	public String getNASA() {
-		String url = "https://eonet.sci.gsfc.nasa.gov/api/v3/events";
+		String url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events";
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(url, String.class);
 		return result;
