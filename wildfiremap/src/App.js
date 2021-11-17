@@ -11,21 +11,41 @@ function App() {
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true)
-      const res = await fetch('http://10.0.0.135:5000/getNASA',{
-        headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-         }}) //process.env.WILDFIRE_ENV
 
-      // const res = await fetch('https://eonet.sci.gsfc.nasa.gov/api/v2.1/events')
-      const { events } = await res.json()
+      axios.get('http://testcmpe-app2.us-west-1.elasticbeanstalk.com/getNASA')
+            .then((response) => {
+                //update the state with the response data
+                console.log((response))
+                setEventData(response.data.events)
+                setLoading(false)
 
-      setEventData(events)
-      setLoading(false)
+            })
+            .catch(err => {
+                console.log(err)
+            });
+
     }
-
     fetchEvents()
   }, [])
+
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     setLoading(true)
+  //     const res = await fetch('http://10.0.0.135:5000/getNASA',{
+  //       headers : { 
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json'
+  //        }}) //process.env.WILDFIRE_ENV
+
+  //     // const res = await fetch('https://eonet.sci.gsfc.nasa.gov/api/v2.1/events')
+  //     const { events } = await res.json()
+
+  //     setEventData(events)
+  //     setLoading(false)
+  //   }
+
+  //   fetchEvents()
+  // }, [])
 
   return (
     <div>
