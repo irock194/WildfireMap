@@ -12,7 +12,7 @@ function App() {
     const fetchEvents = async () => {
       setLoading(true)
 
-      axios.get('http://testcmpe-app2.us-west-1.elasticbeanstalk.com/getNASA')
+      axios.get('http://testcmpe-app3.us-west-1.elasticbeanstalk.com/getNASA')
             .then((response) => {
                 //update the state with the response data
                 console.log((response))

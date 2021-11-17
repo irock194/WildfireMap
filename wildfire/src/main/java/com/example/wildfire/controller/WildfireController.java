@@ -19,9 +19,10 @@ import com.example.wildfire.repository.*;
 import com.example.wildfire.entity.*;
 import com.example.wildfire.exception.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.json.*;
 
 
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin
 @RestController
 public class WildfireController {
 
@@ -68,6 +69,37 @@ public class WildfireController {
 		String url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events";
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(url, String.class);
+		return result;
+	}
+
+	@CrossOrigin
+	@PostMapping(path = "/insertNASA", produces = MediaType.APPLICATION_JSON_VALUE)
+	public String insertNASA() {
+		String url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events";
+		RestTemplate restTemplate = new RestTemplate();
+		String result = restTemplate.getForObject(url, String.class);
+		JSONObject obj = new JSONObject(result);
+		JSONArray eventsArr = obj.getJSONArray("events");
+		for(int i = 0; i < eventsArr.length(); i++)
+		{
+			String title = eventsArr.getJSONObject(i).getString("title");
+			JSONArray categoriesArr = eventsArr.getJSONObject(i).getJSONArray("categories");
+			for(int j = 0; j < categoriesArr.length(); j++)
+			{
+				String category = categoriesArr.getJSONObject(j).getString("title");
+
+			}
+
+			JSONArray geometriesArr = eventsArr.getJSONObject(i).getJSONArray("geometries");
+			for(int j = 0; j < geometriesArr.length(); j++)
+			{
+				
+			}
+
+
+		}
+		
+
 		return result;
 	}
 }
