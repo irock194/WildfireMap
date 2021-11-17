@@ -15,17 +15,29 @@ public class Wildfire {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@Column(name = "the_name")
+	@Column(name = "title")
 	private String theName;
+	
+	@Column(name = "date")
+	private String theDate;
+	
+	@Column(name = "category")
+	private String theCategory;
+	
+	@Column(name = "coordinates")
+	private String theCoordinates;
 	
 	public Wildfire() {
 		
 	}
 	
-	public Wildfire(String name)
+	public Wildfire(String name, String date, String category, String coords)
 	{
 		super();
 		theName = name;
+		theDate = date;
+		theCategory = category;
+		theCoordinates = coords;
 	}
 	
 	public long getId() {
@@ -39,5 +51,23 @@ public class Wildfire {
 	}
 	public void setName(String name) {
 		theName = name;
+	}
+	public String getDate() {
+		return theDate;
+	}
+	public void setDate(String date) {
+		theDate = date;
+	}
+	public String getCategory() {
+		return theCoordinates;
+	}
+	public void setCategory(String category) {
+		theCategory = category;
+	}
+	public String getCoordinates() {
+		return theCoordinates;
+	}
+	public void setCoordinates(String coordinates) {
+		theCoordinates = coordinates;
 	}
 }
