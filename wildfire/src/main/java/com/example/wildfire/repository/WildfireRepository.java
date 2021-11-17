@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.wildfire.entity.*;
 
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin
 @Repository
 public interface WildfireRepository extends JpaRepository<Wildfire, Long>{
 
