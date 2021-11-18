@@ -24,20 +24,24 @@ public class Wildfire {
 	@Column(name = "category")
 	private String theCategory;
 	
-	@Column(name = "coordinates")
-	private String theCoordinates;
+	@Column(name = "x_coordinate")
+	private double xCoordinate;
+	
+	@Column(name = "y_coordinate")
+	private double yCoordinate;
 	
 	public Wildfire() {
 		
 	}
 	
-	public Wildfire(String name, String date, String category, String coords)
+	public Wildfire(String name, String date, String category, double xCoord, double yCoord)
 	{
 		super();
 		theName = name;
 		theDate = date;
 		theCategory = category;
-		theCoordinates = coords;
+		xCoordinate = xCoord;
+		yCoordinate = yCoord;
 	}
 	
 	public long getId() {
@@ -59,15 +63,21 @@ public class Wildfire {
 		theDate = date;
 	}
 	public String getCategory() {
-		return theCoordinates;
+		return theCategory;
 	}
 	public void setCategory(String category) {
 		theCategory = category;
 	}
-	public String getCoordinates() {
-		return theCoordinates;
+	public double getXCoordinates() {
+		return xCoordinate;
 	}
-	public void setCoordinates(String coordinates) {
-		theCoordinates = coordinates;
+	public void setXCoordinates(double xCoordinates) {
+		xCoordinate = xCoordinates;
+	}
+	public double getYCoordinates() {
+		return yCoordinate;
+	}
+	public void setYCoordinates(double yCoordinates) {
+		yCoordinate = yCoordinates;
 	}
 }
