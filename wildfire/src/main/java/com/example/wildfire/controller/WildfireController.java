@@ -1,5 +1,6 @@
 package com.example.wildfire.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,34 +74,49 @@ public class WildfireController {
 	}
 
 	@CrossOrigin
-	@PostMapping(path = "/insertNASA", produces = MediaType.APPLICATION_JSON_VALUE)
-	public String insertNASA() {
+	@GetMapping(path = "/api/insertNASA")
+	public List<Wildfire> insertNASA() {
 		String url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events";
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(url, String.class);
 		JSONObject obj = new JSONObject(result);
+		List<Wildfire> wildfires = new ArrayList<Wildfire>();
 		JSONArray eventsArr = obj.getJSONArray("events");
 		for(int i = 0; i < eventsArr.length(); i++)
 		{
+			Wildfire wildfireToAdd = new Wildfire();
 			String title = eventsArr.getJSONObject(i).getString("title");
+			wildfireToAdd.setName(title);
 			JSONArray categoriesArr = eventsArr.getJSONObject(i).getJSONArray("categories");
 			for(int j = 0; j < categoriesArr.length(); j++)
 			{
 				String category = categoriesArr.getJSONObject(j).getString("title");
-
+				wildfireToAdd.setCategory(category);
 			}
 
 			JSONArray geometriesArr = eventsArr.getJSONObject(i).getJSONArray("geometries");
 			for(int j = 0; j < geometriesArr.length(); j++)
 			{
-				
+				String date =  geometriesArr.getJSONObject(j).getString("date");
+				wildfireToAdd.setDate(date);
+				//String coordinates = "" + geometriesArr.getJSONObject(j).getNames("coordinates");
+				JSONArray coordinatesArr = geometriesArr.getJSONObject(j).getJSONArray("coordinates");
+				for(int k = 0; k < coordinatesArr.length(); j++)
+				{
+					
+				}
 			}
 
+			wildfires.add(wildfireToAdd);
+		}
 
+		for(Wildfire currentWildfire: wildfires)
+		{
+			System.out.println(currentWildfire.getId() + " "  + currentWildfire.getDate() + " " + currentWildfire.getCoordinates() + " " + currentWildfire.getName());
 		}
 		
 
-		return result;
+		return this.wildfireRepository.saveAll(wildfires);
 	}
 }
 
