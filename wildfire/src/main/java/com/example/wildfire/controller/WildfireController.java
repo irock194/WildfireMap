@@ -99,11 +99,14 @@ public class WildfireController {
 			{
 				String date =  geometriesArr.getJSONObject(j).getString("date");
 				wildfireToAdd.setDate(date);
-				//String coordinates = "" + geometriesArr.getJSONObject(j).getNames("coordinates");
 				JSONArray coordinatesArr = geometriesArr.getJSONObject(j).getJSONArray("coordinates");
-				for(int k = 0; k < coordinatesArr.length(); j++)
+				for(int k = 0; k < coordinatesArr.length(); k++)
 				{
-					
+					double coordinate = coordinatesArr.getBigDecimal(k).doubleValue();
+					if(k == 0)
+						wildfireToAdd.setXCoordinates(coordinate);
+					else
+						wildfireToAdd.setYCoordinates(coordinate);
 				}
 			}
 
@@ -112,7 +115,7 @@ public class WildfireController {
 
 		for(Wildfire currentWildfire: wildfires)
 		{
-			System.out.println(currentWildfire.getId() + " "  + currentWildfire.getDate() + " " + currentWildfire.getCoordinates() + " " + currentWildfire.getName());
+			System.out.println(currentWildfire.getId() + " "  + currentWildfire.getDate() + " " + currentWildfire.getXCoordinates() + ":" + currentWildfire.getYCoordinates() + " " + currentWildfire.getName());
 		}
 		
 
