@@ -109,16 +109,12 @@ public class WildfireController {
 						wildfireToAdd.setYCoordinates(coordinate);
 				}
 			}
-
 			wildfires.add(wildfireToAdd);
 		}
-
-		for(Wildfire currentWildfire: wildfires)
-		{
-			System.out.println(currentWildfire.getId() + " "  + currentWildfire.getDate() + " " + currentWildfire.getXCoordinates() + ":" + currentWildfire.getYCoordinates() + " " + currentWildfire.getName());
-		}
-		
-
+		// for(Wildfire currentWildfire: wildfires)
+		// {
+		// 	System.out.println(currentWildfire.getId() + " "  + currentWildfire.getDate() + " " + currentWildfire.getXCoordinates() + ":" + currentWildfire.getYCoordinates() + " " + currentWildfire.getName());
+		// }
 		return this.wildfireRepository.saveAll(wildfires);
 	}
 }
