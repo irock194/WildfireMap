@@ -2,7 +2,7 @@
 {
     "AWSEBDockerrunVersion":"1",
     "Image":{
-        "Name":"kwanqing/wildfire:latest",
+        "Name":"kwanqing/disastertracker:latest",
         "Update": "true"
     },
 
