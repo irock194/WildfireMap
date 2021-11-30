@@ -46,3 +46,5 @@ Then, run the frontend which is React after booted up the backend, just run the 
 ## Database Schema:
 
 ![Database Schema](/Documentation/Database%20Schema.PNG?raw=true)
+
+Link to the website: http://disastertracker.us-west-1.elasticbeanstalk.com/
