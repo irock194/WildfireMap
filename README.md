@@ -27,7 +27,7 @@ Create a database in MySQL named wildfiremap. Create a table named wildfires und
 In order to start the java application, run the WildfireApplication class. This should boot up the
 Springboot.
 
-For the front end which is React, just run the npm start in the correct path and this should boot up the React server in localhost:3000.
+Then, run the frontend which is React after booted up the backend, just run the npm start in the correct path and this should boot up the React server in localhost:3000.
 
 ## System Diagram:
 
