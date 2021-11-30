@@ -24,10 +24,20 @@ the world. This application is used to help people understand where wildfires ha
 
 ## How to run locally:
 
-In order to start the java application, run the WildfireApplication class. This should boot up the
-Springboot.
+From the main directory of the folder, use these commands to start up the back end at localhost:5000.
 
-Then, run the frontend which is React after booted up the backend, just run the npm start in the correct path and this should boot up the React server in localhost:3000.
+cd ./BackEnd
+mvn clean install
+mvn clean package
+java -jar target/wildfire-0.0.1-SNAPSHOT.jar
+
+From the main directory of the folder, use these commands to start up the front end at localhost:3000.
+
+cd ./FrontEnd
+npm install
+npm run
+
+Go to your main browser and go to localhost:3000 to see the application running on port 3000.
 
 ## System Diagram:
 
