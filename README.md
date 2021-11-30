@@ -21,7 +21,7 @@ Sample Demo Screenshots:
 
 System Diagram:
 
-![System Diagram](/Documentation/System Diagram.PNG?raw=true "System diagram")
+![Demo Screenshots](/Documentation/System Diagram.PNG?raw=true "System diagram") 
 
 Class Diagram:
 
