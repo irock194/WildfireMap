@@ -25,6 +25,12 @@ System Diagram:
 
 Class Diagram:
 
+![Class Diagram](/Documentation/Class%20Diagram.PNG?raw=true)
+
 Sequence Diagram:
 
+![Sequence Diagram](/Documentation/Sequence%20Diagram.PNG?raw=true)
+
 Database Schema:
+
+![Database Schema](/Documentation/Database%20Schema.PNG?raw=true)
