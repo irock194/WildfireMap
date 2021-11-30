@@ -3,7 +3,7 @@
 University: San Jose State University
 Course: CMPE 172 / Fall 2021
 
-Team Members: Andrew Nguyen, Gabriel Tenocelotl, Jeffery Kwan Qing Ong
+Team Members: Andrew Nguyen, Gabriel Tenocelotl, Jeffrey Ong
 
 ## Introduction:
 The wildfire map application does an API call to get information from NASA to gather information about current wildfires and other natural disasters.
