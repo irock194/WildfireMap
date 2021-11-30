@@ -24,8 +24,6 @@ the world. This application is used to help people understand where wildfires ha
 
 ## How to run locally:
 
-Create a database in MySQL named wildfiremap. Create a table named wildfires under the wildfiremap schema.
-
 In order to start the java application, run the WildfireApplication class. This should boot up the
 Springboot.
 
