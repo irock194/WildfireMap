@@ -16,6 +16,8 @@ the world. This application is used to help people understand where wildfires ha
 
 ![Demo Screenshots](/Documentation/wildfireFrontPage.PNG?raw=true "Start Page")
 
+![Demo Screenshots](/Documentation/wildfireFrontPage2.PNG?raw=true "Start 2")
+
 ![Demo Screenshots](/Documentation/secondExample.PNG?raw=true "More information on wildfires")
 
 ![Demo Screenshots](/Documentation/thirdExample.PNG?raw=true "Europe wildfires")
