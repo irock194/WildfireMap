@@ -1,7 +1,8 @@
 ﻿# WildfireMap
 
-University: San Jose State University
-Course: CMPE 172 / Fall 2021
+#University: San Jose State University
+
+#Course: CMPE 172 / Fall 2021
 
 Team Members: Andrew Nguyen, Gabriel Tenocelotl, Jeffrey Ong
 
