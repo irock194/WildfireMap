@@ -6,7 +6,6 @@ WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
-ENV WILDFIRE_ENV https://eonet.sci.gsfc.nasa.gov/api/v2.1/events
 
 # install app dependencies
 COPY package.json ./
