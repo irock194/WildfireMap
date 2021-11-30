@@ -26,17 +26,20 @@ the world. This application is used to help people understand where wildfires ha
 
 From the main directory of the folder, use these commands to start up the back end at localhost:5000.
 
-
 cd ./BackEnd
+
 mvn clean install
+
 mvn clean package
+
 java -jar target/wildfire-0.0.1-SNAPSHOT.jar
 
 From the main directory of the folder, use these commands to start up the front end at localhost:3000.
 
-
 cd ./FrontEnd
+
 npm install
+
 npm run
 
 
