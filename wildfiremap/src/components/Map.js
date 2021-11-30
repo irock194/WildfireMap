@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 import LocationMarker from './FireMarker'
 import LocationBox from './LocationBox'
 import VolcanoMarker from './VolcanoMarker'
 import StormMarker from './StormMarker'
 import IceMarker from './IceMarker'
+import React, {useState} from 'react';
 
 // define constants
 const NATURAL_EVENT_WILDFIRE = 8;
@@ -12,7 +12,7 @@ const NATURAL_EVENT_VOLCANO = 12;
 const NATURAL_EVENT_STORM = 10;
 const NATURAL_EVENT_ICE = 15;
 
-const Map = ({ eventData, center, zoom }) => {
+const Map = ({ eventData, center, zoom}) => {
     const [locationInfo, setLocationInfo] = useState(null)
 
     // useState hook to show locationBox or not
@@ -59,11 +59,14 @@ const Map = ({ eventData, center, zoom }) => {
     })
 
     return (
-        <div className="map">
+        <div className="map-container">
             <GoogleMapReact
                 bootstrapURLKeys={{ key: '' }}
                 defaultCenter={ center }
                 defaultZoom={ zoom }
+
+                onClick={() => {setLocationInfo(null)}}
+                onDrag={() => setLocationInfo(null)}
             >
                 {markers}
             </GoogleMapReact>
