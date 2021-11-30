@@ -1,0 +1,15 @@
+
+{
+    "AWSEBDockerrunVersion":"1",
+    "Image":{
+        "Name":"kwanqing/wildfire:latest",
+        "Update": "true"
+    },
+
+    "Ports":[
+        {
+            "ContainerPort":3000,
+            "HostPort":3000
+        }
+    ]
+}

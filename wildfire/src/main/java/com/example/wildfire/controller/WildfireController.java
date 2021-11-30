@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.json.*;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class WildfireController {
 
@@ -64,7 +64,7 @@ public class WildfireController {
 		return ResponseEntity.ok().build();
 	}
 
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping(path = "/getNASA", produces = MediaType.APPLICATION_JSON_VALUE)
 	public String getNASA() {
 		String url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events";
@@ -73,7 +73,7 @@ public class WildfireController {
 		return result;
 	}
 
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping(path = "/api/insertNASA")
 	public List<Wildfire> insertNASA() {
 		String url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events";
