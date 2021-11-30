@@ -8,8 +8,6 @@ import Search from './components/Search';
 import {useMainContext} from './Context/Context'
 
 function App() {
-  // const [eventData, setEventData] = useState([])
-  // const [loading, setLoading] = useState(false)
 
   const { eventData, setEventData, reRenderMarkers} = useMainContext();
   const [loading, setLoading] = useState(false);
